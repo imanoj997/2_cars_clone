@@ -1,0 +1,19 @@
+body {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+canvas {
+  border: 1px solid rebeccapurple;
+  margin: 0px auto;
+  position: absolute;
+  left: 30%;
+  overflow: hidden;
+}
+
+img{
+  display: none;
+}
+
+
