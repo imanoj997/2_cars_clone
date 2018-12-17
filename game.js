@@ -13,10 +13,14 @@ function getRandomInt(min, max) {
 
 
 function Game() {
+    var redObstaclesList = new RedObstaclesList();
+    var blueObstaclesList = new BlueObstaclesList();
+
     var initialRedObstacle = new RedObstacles();
-    redObstacleArray.push(initialRedObstacle);
+    redObstaclesList.add(initialRedObstacle);
+
     var initialBlueObstacle = new BlueObstacles();
-    blueObstacleArray.push(initialBlueObstacle);
+    blueObstaclesList.add(initialBlueObstacle);
 
     var redRandomDelay = getRandomInt(39,79);
     var blueRandomDelay = getRandomInt(41,81);
@@ -34,29 +38,29 @@ function Game() {
             redObstacleDelay = 1;
             redRandomDelay =  getRandomInt(39,79);
             var redObstacle = new RedObstacles();
-            redObstacleArray.push(redObstacle);
+            redObstaclesList.add(redObstacle);
             //console.log(redObstacle + 'created');
         }
         if(blueObstacleDelay%blueRandomDelay === 0){
             blueObstacleDelay = 1;
             blueRandomDelay =  getRandomInt(41,81);
             var blueObstacle = new BlueObstacles();
-            blueObstacleArray.push(blueObstacle);
+            blueObstaclesList.add(blueObstacle);
         }
         
-        redObstacleArray.forEach(element => {
+        redObstaclesList.redObstacleArray.forEach(element => {
             element.draw();
             element.update();
             if (element.y>canvas.height) {
-                redObstacleArray.splice(0,1);
+                redObstaclesList.remove(redObstacle);
                 //console.log(element + 'destroyed');
             }
         });
-        blueObstacleArray.forEach(element => {
+        blueObstaclesList.blueObstacleArray.forEach(element => {
             element.draw();
             element.update();
             if (element.y>canvas.height) {
-                blueObstacleArray.splice(0,1);
+                blueObstaclesList.remove(redObstacle);
                 //console.log(element + 'destroyed');
             }
         });
