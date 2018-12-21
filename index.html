@@ -1,26 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" media="screen" href="./css/reset.css" />
-  <link rel="stylesheet" type="text/css" media="screen" href="./css/layout.css" />
-  <link rel="stylesheet" type="text/css" media="screen" href="./css/style.css" />  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>2 Cars Clone</title>
-  
-</head>
-<body>
-    <canvas>
-    </canvas>
-    <img src="./images/bg.png" alt="bg">
-    <img src="./images/red-circle.png" alt="red-circle">
-    <img src="./images/red-rect.png" alt="red-rectangle">
-    <img src="./images/blue-circle.png" alt="blue-circle">
-    <img src="./images/blue-rect.png" alt="blue-rectangle">
-    <script src="obstacles.js"></script>
-    <script src="elements.js"></script>
-    <script src="gameOver.js"></script>
-    <script src="game.js"></script>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Quicksand"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="./css/reset.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="./css/layout.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="./css/style.css"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>2 Cars Clone</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <canvas> </canvas>
+      <div class="welcomeDiv">
+        <h1 class="title"><span>2</span> CARS</h1>
+        <button class="playBtn">
+          <img src="./images/playBtn.png" alt="Play Button" />
+        </button>
+        <!-- <div class="btnRow">
+          <button class="leaderboard">
+            <img src="./images/leaderboard.png" alt="leaderboard" />
+          </button>
+          <button class="ratings">
+            <img src="./images/ratings.png" alt="ratings" />
+          </button>
+          <button class="music">
+            <img src="./images/music.png" alt="music" />
+          </button>
+          <button class="mute">
+            <img src="./images/mute.png" alt="mute" />
+          </button>
+        </div> -->
+      </div>
+      <img id="background" src="./images/bg.png" alt="bg" />
+      <img id="red-circle" src="./images/red-circle.png" alt="red-circle" />
+      <img id="red-rect" src="./images/red-rect.png" alt="red-rectangle" />
+      <img id="blue-circle" src="./images/blue-circle.png" alt="blue-circle" />
+      <img id="blue-rect" src="./images/blue-rect.png" alt="blue-rectangle" />
+      <script src="obstacles.js"></script>
+      <script src="elements.js"></script>
+      <script src="collision.js"></script>
+      <script src=" game.js"></script>
+    </div>
+  </body>
 </html>
