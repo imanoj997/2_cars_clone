@@ -17,8 +17,7 @@ function collisonDetection(bluecar, redcar, obstacle) {
       if (
         this.redcar.redCarLane === this.obstacle.lane &&
         this.obstacle.y + 40 >= this.redcar.redCarTop &&
-        this.obstacle.y <= this.redcar.redCarTop + 75 &&
-        isRedCarMoving === false
+        this.obstacle.y <= this.redcar.redCarTop + 75
       ) {
         isCollision = true;
         isCircle = true;
@@ -30,8 +29,7 @@ function collisonDetection(bluecar, redcar, obstacle) {
       if (
         this.bluecar.blueCarLane === this.obstacle.lane &&
         this.obstacle.y + 40 >= this.bluecar.blueCarTop &&
-        this.obstacle.y <= this.bluecar.blueCarTop + 75 &&
-        isRedCarMoving === false
+        this.obstacle.y <= this.bluecar.blueCarTop + 75
       ) {
         isCollision = true;
         isCircle = true;
@@ -73,14 +71,14 @@ function circleMissed(bluecar, redcar, obstacle) {
     this.obstacle.y > this.redcar.redCarTop + 75
   ) {
     isCircleMissed = true;
-    // console.log("red missed");
+    console.log("red missed");
   } else if (
     this.obstacle.obstacleType === "circle" &&
     obstacle.color === "blue" &&
     this.obstacle.y > this.bluecar.blueCarTop + 75
   ) {
     isCircleMissed = true;
-    // console.log("blue missed");
+    console.log("blue missed");
   } else isCircleMissed = false;
 }
 

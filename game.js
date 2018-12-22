@@ -47,7 +47,6 @@ function Game() {
       redRandomDelay = getRandomInt(39, 79);
       var redObstacle = new RedObstacles();
       redObstaclesList.add(redObstacle);
-      //console.log(redObstacle + 'created');
     }
     if (blueObstacleDelay % blueRandomDelay === 0) {
       blueObstacleDelay = 1;
@@ -95,9 +94,7 @@ function Game() {
       element.draw();
       collisonDetection(carB, carR, element);
       circleMissed(carB, carR, element);
-      // console.log(isCircleMissed);
 
-      // var circleMissed = new circleMissed();
       if (blueCollide === false && isCircleMissed === false) {
         element.update();
         if (element.y > canvas.height) {
