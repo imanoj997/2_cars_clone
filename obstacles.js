@@ -23,6 +23,7 @@ function RedObstacles() {
   this.y = circleY;
   this.radius = 20;
   this.obstacleType = obstacleTypeArray[Math.floor(Math.random() * 2)];
+  this.color = "red";
   if (this.x === 45.25) {
     this.lane = "left";
   } else if (this.x == 181.75) {
@@ -56,10 +57,6 @@ function RedObstaclesList() {
   this.remove = function() {
     this.redObstacleArray.splice(0, 1);
   };
-
-  this.getAll = function() {
-    return this.redObstacleArray;
-  };
 }
 
 function BlueObstacles() {
@@ -67,6 +64,7 @@ function BlueObstacles() {
   this.y = circleY;
   this.radius = 20;
   this.obstacleType = obstacleTypeArray[Math.floor(Math.random() * 2)];
+  this.color = "blue";
   if (this.x === 324.25) {
     this.lane = "left";
   } else if (this.x == 460.75) {
@@ -99,9 +97,5 @@ function BlueObstaclesList() {
 
   this.remove = function() {
     this.blueObstacleArray.splice(0, 1);
-  };
-
-  this.getAll = function() {
-    return this.blueObstacleArray;
   };
 }

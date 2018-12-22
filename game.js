@@ -8,8 +8,15 @@ var welcomeScreen = document.getElementsByTagName("div")[1];
 welcomeScreen.width = window.innerWidth / 2.5;
 welcomeScreen.height = window.innerHeight - 2;
 
+var gameOverScreen = document.getElementsByTagName("div")[2];
+gameOverScreen.width = window.innerWidth / 2.5;
+gameOverScreen.height = window.innerHeight - 2;
+
 var redObstaclesList = new RedObstaclesList();
 var blueObstaclesList = new BlueObstaclesList();
+
+var redKeyPressed = false;
+var blueKeyPressed = false;
 
 var carR = new Cars();
 var carB = new Cars();
@@ -36,7 +43,6 @@ function Game() {
     lines();
 
     if (redObstacleDelay % redRandomDelay === 0) {
-      //console.log(obstacleDelay,randomDelay);
       redObstacleDelay = 1;
       redRandomDelay = getRandomInt(39, 79);
       var redObstacle = new RedObstacles();
@@ -53,49 +59,58 @@ function Game() {
     carR.drawRed();
     carB.drawBlue();
 
+    window.onkeydown = function(e) {
+      var code = e.keyCode ? e.keyCode : e.which;
+      if (code === 90) {
+        //z key
+        carR.changeRedCarLane();
+      }
+      if (code === 77) {
+        //m key
+        carB.changeBlueCarLane();
+      }
+    };
+
     redObstaclesList.redObstacleArray.forEach(element => {
       element.draw();
-      // console.log(carR.redCarLeft, carR.redCarLane);
-      // console.log(element.lane, element.x, element.obstacleType);
 
-      window.onkeydown = function(e) {
-        var code = e.keyCode ? e.keyCode : e.which;
-        if (code === 90) {
-          //left arrow key
-          carR.redCarLeft = redCarLane2;
-          carR.changeRedCarLane();
-        }
-        if (code === 77) {
-          //left arrow key
-          carB.blueCarLeft = blueCarLane2;
-          carB.chnageBlueCarLane();
-        }
-      };
       collisonDetection(carB, carR, element);
-      if (redCollide === false) {
+      circleMissed(carB, carR, element);
+      if (redCollide === false && isCircleMissed === false) {
         element.update();
         if (element.y > canvas.height) {
           redObstaclesList.remove(redObstacle);
-          //console.log(element + 'destroyed');
         }
       } else if (redCollide === true) {
-        console.log("red" + redCollide);
         isOver = true;
+        loadGameOverScreen();
+      } else if (isCircleMissed === true) {
+        isOver = true;
+        loadGameOverScreen();
       }
+      updateScore();
     });
 
     blueObstaclesList.blueObstacleArray.forEach(element => {
       element.draw();
       collisonDetection(carB, carR, element);
-      if (blueCollide === false) {
+      circleMissed(carB, carR, element);
+      // console.log(isCircleMissed);
+
+      // var circleMissed = new circleMissed();
+      if (blueCollide === false && isCircleMissed === false) {
         element.update();
         if (element.y > canvas.height) {
           blueObstaclesList.remove(blueObstacle);
         }
       } else if (blueCollide === true) {
         isOver = true;
-        console.log("blue" + blueCollide);
+        loadGameOverScreen();
+      } else if (isCircleMissed === true) {
+        isOver = true;
+        loadGameOverScreen();
       }
+      updateScore();
     });
     redObstacleDelay++;
     blueObstacleDelay++;
@@ -105,21 +120,25 @@ function Game() {
 }
 
 function loadWelcomeScreen() {
+  gameOverScreen.style.display = "none";
   moveBackground();
   lines();
-  var carR = new Cars();
-  var carB = new Cars();
-  // new Cars().drawBlue();
-  // new Cars().drawRed();
   canvas.style.opacity = 0.8;
 }
 
+function loadGameOverScreen() {
+  gameOverScreen.style.display = "block";
+}
+
 var newGame = new Game();
+
 window.onkeydown = function(e) {
   var code = e.keyCode ? e.keyCode : e.which;
+
   if (code === 32) {
     //space key
     welcomeScreen.style.display = "none";
+
     canvas.style.opacity = 1;
     newGame.start();
   } else {

@@ -70,3 +70,36 @@ ul li button {
   height: 90px;
   position: absolute;
 }
+
+.red {
+  left: 200px;
+  top: 340px;
+  color: red;
+  position: absolute;
+}
+
+.blue {
+  left: 200px;
+  top: 370px;
+  color: red;
+  position: absolute;
+}
+
+h2 {
+  left: 160px;
+  top: 400px;
+  color: red;
+  position: absolute;
+}
+
+.gameoverDiv {
+  position: absolute;
+  margin: 0px auto;
+  left: 10%;
+  overflow: hidden;
+  height: 626px;
+}
+
+.gameoverDiv h1 {
+  padding: 230px 30px;
+}

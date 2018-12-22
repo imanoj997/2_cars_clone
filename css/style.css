@@ -1,5 +1,4 @@
 .title {
-  padding: 130px 130px;
   background: -webkit-linear-gradient(yellow, red);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -36,4 +35,14 @@ ul li {
 
 .mute {
   background: url("../images/mute.png");
+}
+
+.gameoverDiv h1 {
+  background: -webkit-linear-gradient(yellow, red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 83px;
+  letter-spacing: 6px;
+  font-weight: 200;
+  font-family: "Quicksand", sans-serif;
 }

@@ -10,6 +10,8 @@ var redCarTop = 480;
 var blueCarLane1 = 324.25;
 var blueCarLane2 = 460.75;
 var blueCarTop = 480;
+var isRedCarMoving = false;
+var isBlueCarMoving = false;
 
 function Cars() {
   this.redCarLeft = redCarLane1;
@@ -20,11 +22,6 @@ function Cars() {
   this.redCar = new Image();
   this.redCarLane = "left";
   this.blueCarLane = "left";
-  // if (this.redCarLeft === redCarLane1) {
-  //   this.lane = "left";
-  // } else if (this.redCarLeft === redCarLane2) {
-  //   this.lane = "right";
-  // }
 
   this.drawRed = function() {
     this.redCar.src = "./images/red-car.png";
@@ -37,22 +34,54 @@ function Cars() {
   };
 
   this.changeRedCarLane = function() {
-    if (this.redCarLane === "left") {
-      this.redCarLane = "right";
-      this.redCarLeft = redCarLane2;
-    } else if (this.redCarLane === "right") {
-      this.redCarLane = "left";
-      this.redCarLeft = redCarLane1;
+    if (carR.redCarLane === "left" && isRedCarMoving === false) {
+      var swipePosition = setInterval(function() {
+        if (carR.redCarLeft <= redCarLane2) {
+          isRedCarMoving = true;
+          carR.redCarLeft += 1;
+        } else {
+          isRedCarMoving = false;
+          carR.redCarLane = "right";
+          clearInterval(swipePosition);
+        }
+      }, 1);
+    } else if (carR.redCarLane === "right" && isRedCarMoving === false) {
+      var swipePosition = setInterval(function() {
+        if (carR.redCarLeft >= redCarLane1) {
+          isRedCarMoving = true;
+          carR.redCarLeft -= 1;
+        } else {
+          isRedCarMoving = false;
+          carR.redCarLane = "left";
+          clearInterval(swipePosition);
+        }
+      }, 1);
     }
   };
 
-  this.chnageBlueCarLane = function() {
-    if (this.blueCarLane === "left") {
-      this.blueCarLane = "right";
-      this.blueCarLeft = blueCarLane2;
-    } else if (this.blueCarLane === "right") {
-      this.blueCarLane = "left";
-      this.blueCarLeft = blueCarLane1;
+  this.changeBlueCarLane = function() {
+    if (carB.blueCarLane === "left" && isBlueCarMoving === false) {
+      var swipePosition = setInterval(function() {
+        if (carB.blueCarLeft <= blueCarLane2) {
+          isBlueCarMoving = true;
+          carB.blueCarLeft += 1;
+        } else {
+          isBlueCarMoving = false;
+          carB.blueCarLane = "right";
+          clearInterval(swipePosition);
+        }
+      }, 1);
+    } else if (carB.blueCarLane === "right" && isBlueCarMoving === false) {
+      var swipePosition = setInterval(function() {
+        if (carB.blueCarLeft >= blueCarLane1) {
+          isBlueCarMoving = true;
+          carB.blueCarLeft -= 1;
+        } else {
+          isBlueCarMoving = false;
+          carB.blueCarLane = "left";
+          clearInterval(swipePosition);
+        }
+      }, 1);
     }
   };
 }
