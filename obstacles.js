@@ -1,7 +1,7 @@
-var redObstacleCircleImg = document.getElementsByTagName("img")[2];
-var redObstacleRectImg = document.getElementsByTagName("img")[3];
-var blueObstacleCircleImg = document.getElementsByTagName("img")[4];
-var blueObstacleRectImg = document.getElementsByTagName("img")[5];
+var redObstacleCircleImg = document.getElementsByTagName("img")[1];
+var redObstacleRectImg = document.getElementsByTagName("img")[2];
+var blueObstacleCircleImg = document.getElementsByTagName("img")[3];
+var blueObstacleRectImg = document.getElementsByTagName("img")[4];
 
 var obstacleVelocity = 300;
 var obstacleFrameGapTime = 17;

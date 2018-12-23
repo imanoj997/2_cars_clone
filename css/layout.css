@@ -25,14 +25,15 @@ img {
   margin: 0px auto;
   left: 10%;
   overflow: hidden;
-  height: 626px;
+  height: 624px;
 }
 
 .title {
-  padding: 130px 130px;
+  padding: 100px 130px;
 }
 
-.playBtn {
+#playBtn,
+#rePlayBtn {
   width: 90px;
   height: 90px;
   position: absolute;
@@ -40,38 +41,81 @@ img {
   top: 250px;
 }
 
-.btnRow {
-  width: 390px;
-  height: 90px;
+.userManualBtn {
+  width: 60px;
+  height: 60px;
+  left: 130px;
+  top: 400px;
   position: absolute;
-  left: 280px;
-  top: 350px;
 }
 
-.btnRow button {
+.leaderboardBtn {
+  width: 60px;
+  height: 60px;
+  left: 205px;
+  top: 400px;
+  position: absolute;
+}
+
+.musicBtn {
+  width: 60px;
+  height: 60px;
+  left: 280px;
+  top: 400px;
+  position: absolute;
+}
+
+.muteBtn {
+  width: 60px;
+  height: 60px;
+  left: 355px;
+  top: 400px;
+  position: absolute;
+}
+
+.copyright {
+  left: 163px;
+  top: 580px;
+  position: absolute;
+}
+
+.gameoverDiv {
+  position: absolute;
+  margin: 0px auto;
+  left: 10%;
+  overflow: hidden;
+  height: 624px;
+}
+
+.gameOverTxt {
+  padding: 110px 85px;
+}
+
+.homeBtn {
+  width: 60px;
+  height: 60px;
+  left: 170px;
+  top: 380px;
+  position: absolute;
+}
+
+.ratingsBtn {
+  width: 60px;
+  height: 60px;
+  left: 307px;
+  top: 380px;
+  position: absolute;
+}
+
+/* .rePlayBtn {
   width: 90px;
   height: 90px;
   position: absolute;
-  left: 280px;
-  top: 350px;
-}
+  left: 228px;
+  top: 250px;
+} */
 
-ul {
-  position: absolute;
-  left: 100px;
-  top: 360px;
-  /* height: 40px;
-  width: 200px; */
-  display: inline;
-}
-
-ul li button {
-  width: 90px;
-  height: 90px;
-  position: absolute;
-}
-
-.red {
+/* .red {
   left: 200px;
   top: 340px;
   color: red;
@@ -90,16 +134,4 @@ h2 {
   top: 400px;
   color: red;
   position: absolute;
-}
-
-.gameoverDiv {
-  position: absolute;
-  margin: 0px auto;
-  left: 10%;
-  overflow: hidden;
-  height: 626px;
-}
-
-.gameoverDiv h1 {
-  padding: 230px 30px;
-}
+} */

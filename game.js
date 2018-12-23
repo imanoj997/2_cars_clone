@@ -2,7 +2,7 @@ var canvas = document.getElementsByTagName("canvas")[0];
 var c = canvas.getContext("2d");
 
 canvas.width = window.innerWidth / 2.5;
-canvas.height = window.innerHeight - 2;
+canvas.height = window.innerHeight;
 
 var welcomeScreen = document.getElementsByTagName("div")[1];
 welcomeScreen.width = window.innerWidth / 2.5;
@@ -10,7 +10,7 @@ welcomeScreen.height = window.innerHeight - 2;
 
 var gameOverScreen = document.getElementsByTagName("div")[2];
 gameOverScreen.width = window.innerWidth / 2.5;
-gameOverScreen.height = window.innerHeight - 2;
+gameOverScreen.height = window.innerHeight;
 
 var redObstaclesList = new RedObstaclesList();
 var blueObstaclesList = new BlueObstaclesList();
@@ -38,6 +38,7 @@ function Game() {
 
   init = function() {
     var isOver = false;
+
     c.clearRect(0, 0, canvas.width, canvas.height);
     moveBackground();
     lines();
@@ -117,17 +118,56 @@ function Game() {
 }
 
 function loadWelcomeScreen() {
+  var newGame = new Game();
   gameOverScreen.style.display = "none";
   moveBackground();
   lines();
   canvas.style.opacity = 0.8;
+  var playBtn = document.getElementById("playBtn");
+  playBtn.addEventListener("click", function() {
+    startGame(newGame);
+  });
 }
 
 function loadGameOverScreen() {
   gameOverScreen.style.display = "block";
+  canvas.style.opacity = 0.8;
 }
 
-var newGame = new Game();
+var replayBtn = document.getElementById("rePlayBtn");
+replayBtn.addEventListener("click", function() {
+  gameOverScreen.style.display = "none";
+  location.reload = loadReGame();
+});
+
+function loadReGame() {
+  redObstaclesList = new RedObstaclesList();
+  blueObstaclesList = new BlueObstaclesList();
+
+  redKeyPressed = false;
+  blueKeyPressed = false;
+
+  currentScore = 0;
+
+  isCollison = false;
+  isCircle = false;
+  blueCollide = false;
+  isCircleMissed = false;
+
+  reGame = new Game();
+  moveBackground();
+  lines();
+  canvas.style.opacity = 0.8;
+  startGame(reGame);
+}
+
+function startGame(game) {
+  welcomeScreen.style.display = "none";
+  canvas.style.opacity = 1;
+  game.start();
+}
+
+loadWelcomeScreen();
 
 window.onkeydown = function(e) {
   var code = e.keyCode ? e.keyCode : e.which;
@@ -135,13 +175,10 @@ window.onkeydown = function(e) {
   if (code === 32) {
     //space key
     welcomeScreen.style.display = "none";
-
     canvas.style.opacity = 1;
     newGame.start();
   } else {
     //z key
-    alert(event.keyCode);
+    alert("Please click play button or press space key");
   }
 };
-
-loadWelcomeScreen();

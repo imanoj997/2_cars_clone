@@ -71,14 +71,12 @@ function circleMissed(bluecar, redcar, obstacle) {
     this.obstacle.y > this.redcar.redCarTop + 75
   ) {
     isCircleMissed = true;
-    console.log("red missed");
   } else if (
     this.obstacle.obstacleType === "circle" &&
     obstacle.color === "blue" &&
     this.obstacle.y > this.bluecar.blueCarTop + 75
   ) {
     isCircleMissed = true;
-    console.log("blue missed");
   } else isCircleMissed = false;
 }
 

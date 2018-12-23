@@ -1,4 +1,4 @@
-var img = document.getElementsByTagName("img")[1];
+var img = document.getElementsByTagName("img")[0];
 var bgDistance = 0;
 var bgVelocity = 300;
 var bgFrameGapTime = 17;
