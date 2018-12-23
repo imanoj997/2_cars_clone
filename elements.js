@@ -1,8 +1,3 @@
-var img = document.getElementsByTagName("img")[0];
-var bgDistance = 0;
-var bgVelocity = 300;
-var bgFrameGapTime = 17;
-
 //car coordinates
 var redCarLane1 = 45.25;
 var redCarLane2 = 181.75;
@@ -12,7 +7,9 @@ var blueCarLane2 = 460.75;
 var blueCarTop = 480;
 var isRedCarMoving = false;
 var isBlueCarMoving = false;
+var carXChange = 1;
 
+//car class
 function Cars() {
   this.redCarLeft = redCarLane1;
   this.redCarTop = redCarTop;
@@ -33,12 +30,12 @@ function Cars() {
     c.drawImage(this.blueCar, this.blueCarLeft, this.blueCarTop);
   };
 
-  this.changeRedCarLane = function() {
+  this.changeRedCarLane = function(carXChange) {
     if (carR.redCarLane === "left" && isRedCarMoving === false) {
       var swipePosition = setInterval(function() {
         if (carR.redCarLeft <= redCarLane2) {
           isRedCarMoving = true;
-          carR.redCarLeft += 1;
+          carR.redCarLeft += carXChange;
         } else {
           isRedCarMoving = false;
           carR.redCarLane = "right";
@@ -49,7 +46,7 @@ function Cars() {
       var swipePosition = setInterval(function() {
         if (carR.redCarLeft >= redCarLane1) {
           isRedCarMoving = true;
-          carR.redCarLeft -= 1;
+          carR.redCarLeft -= carXChange;
         } else {
           isRedCarMoving = false;
           carR.redCarLane = "left";
@@ -59,12 +56,12 @@ function Cars() {
     }
   };
 
-  this.changeBlueCarLane = function() {
+  this.changeBlueCarLane = function(carXChange) {
     if (carB.blueCarLane === "left" && isBlueCarMoving === false) {
       var swipePosition = setInterval(function() {
         if (carB.blueCarLeft <= blueCarLane2) {
           isBlueCarMoving = true;
-          carB.blueCarLeft += 1;
+          carB.blueCarLeft += carXChange;
         } else {
           isBlueCarMoving = false;
           carB.blueCarLane = "right";
@@ -75,7 +72,7 @@ function Cars() {
       var swipePosition = setInterval(function() {
         if (carB.blueCarLeft >= blueCarLane1) {
           isBlueCarMoving = true;
-          carB.blueCarLeft -= 1;
+          carB.blueCarLeft -= carXChange;
         } else {
           isBlueCarMoving = false;
           carB.blueCarLane = "left";
@@ -86,6 +83,7 @@ function Cars() {
   };
 }
 
+//draws divider lines
 function lines() {
   //middle line
   c.beginPath();
@@ -109,14 +107,8 @@ function lines() {
   c.stroke();
 }
 
-function moveBackground() {
-  bgDistance += bgVelocity * (bgFrameGapTime / 1000);
-  if (bgDistance > canvas.height) {
-    bgDistance = 0;
-  }
-  c.save();
-  c.translate(0, bgDistance);
+// draws blue background
+function drawBackground() {
+  var img = document.getElementsByTagName("img")[0];
   c.drawImage(img, 0, 0);
-  c.drawImage(img, 0, -img.height + 1);
-  c.restore();
 }

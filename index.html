@@ -31,20 +31,27 @@
 
   <body>
     <div class="container">
-      <canvas> </canvas>
+      <canvas> </canvas> <audio id="bgAudio" src="sounds/bg-music.mp3"></audio>
       <div class="welcomeDiv">
         <h1 class="title"><span>2</span> CARS</h1>
-        <button id="playBtn"></button> <button class="userManualBtn"></button>
-        <button class="leaderboardBtn"></button>
-        <button class="musicBtn"></button> <button class="muteBtn"></button>
+        <button id="playBtn"></button>
+        <button class="btnRow" id="userManualBtn"></button>
+        <button class="levelsBtn btnRow" id="levelBtn"></button>
+        <button class="musicBtn btnRow"></button>
+        <button class="btnRow muteBtn"></button>
+        <button class="level" id="level1"></button>
+        <button class="level" id="level2"></button>
+        <button class="level" id="level3"></button>
         <p class="copyright">&copy; 2018 imanoj997</p>
-        <!-- <h3 class="red"><strong>Z - </strong>Controls the red car</h3>
-        <h3 class="blue"><strong>M - </strong>Controls the blue car</h3>
-        <h2><strong>Press SPACE to start game</strong></h2> -->
+        <h2 class="firstInstruction">It's a Easy Game</h2>
+        <h2>Don't Miss the Rings</h2>
+        <h2>Don't Touch the Rectangles</h2>
+        <h2>Z: To Control Red Car</h2>
+        <h2>M: To Control Blue Car</h2>
       </div>
       <div class="gameoverDiv">
         <h1 class="gameOverTxt"><span>G</span>ame <span>O</span>ver</h1>
-        <button id="rePlayBtn"></button> <button class="homeBtn"></button>
+        <button id="rePlayBtn"></button> <button id="homeBtn"></button>
         <button class="ratingsBtn"></button>
         <p class="copyright">&copy; 2018 imanoj997</p>
       </div>

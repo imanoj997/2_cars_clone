@@ -3,10 +3,9 @@ var redObstacleRectImg = document.getElementsByTagName("img")[2];
 var blueObstacleCircleImg = document.getElementsByTagName("img")[3];
 var blueObstacleRectImg = document.getElementsByTagName("img")[4];
 
-var obstacleVelocity = 300;
+var levelSelector = 1;
+var velocity;
 var obstacleFrameGapTime = 17;
-//var redObstacleArray = [];
-//var blueObstacleArray = [];
 
 var redObstacleXArray = [45.25, 181.75];
 var blueObstacleXArray = [324.25, 460.75];
@@ -18,7 +17,9 @@ var obstacleDelayArray = [45, 50, 65, 80, 85];
 var redObstacleDelay = 0;
 var blueObstacleDelay = 0;
 
-function RedObstacles() {
+//class of red obastacles
+function RedObstacles(velocity) {
+  this.obstacleVelocity = velocity;
   this.x = redObstacleXArray[Math.floor(Math.random() * 2)];
   this.y = circleY;
   this.radius = 20;
@@ -39,14 +40,11 @@ function RedObstacles() {
   };
 
   this.update = function() {
-    this.y += obstacleVelocity * (obstacleFrameGapTime / 1000);
-  };
-
-  this.hide = function() {
-    c.hide;
+    this.y += this.obstacleVelocity * (obstacleFrameGapTime / 1000);
   };
 }
 
+//adds and removes red obstacles into an array
 function RedObstaclesList() {
   this.redObstacleArray = [];
 
@@ -59,7 +57,9 @@ function RedObstaclesList() {
   };
 }
 
-function BlueObstacles() {
+//class of red obastacles
+function BlueObstacles(velocity) {
+  this.obstacleVelocity = velocity;
   this.x = blueObstacleXArray[Math.floor(Math.random() * 2)];
   this.y = circleY;
   this.radius = 20;
@@ -80,7 +80,7 @@ function BlueObstacles() {
   };
 
   this.update = function() {
-    this.y += obstacleVelocity * (obstacleFrameGapTime / 1000);
+    this.y += this.obstacleVelocity * (obstacleFrameGapTime / 1000);
   };
 
   this.hide = function() {
@@ -88,6 +88,7 @@ function BlueObstacles() {
   };
 }
 
+//adds and removes blue obstacles into an array
 function BlueObstaclesList() {
   this.blueObstacleArray = [];
 

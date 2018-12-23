@@ -8,7 +8,10 @@
   font-family: "Quicksand", sans-serif;
 }
 
-.title,
+.title span {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 900;
+}
 .gameOverTxt span {
   font-family: "Quicksand", sans-serif;
   font-weight: 900;
@@ -18,12 +21,28 @@
   background: url("../images/play.png");
 }
 
-.userManualBtn {
+#userManualBtn {
   background: url("../images/user-manual.png");
 }
 
-.leaderboardBtn {
-  background: url("../images/leaderboard.png");
+.levelsBtn {
+  background: url("../images/levels.png");
+}
+
+.level {
+  display: none;
+}
+
+#level1 {
+  background: url(../images/level1.png);
+}
+
+#level2 {
+  background: url(../images/level2.png);
+}
+
+#level3 {
+  background: url(../images/level3.png);
 }
 
 .musicBtn {
@@ -62,6 +81,22 @@
   background: url("../images/ratings.png");
 }
 
-.homeBtn {
+#homeBtn {
   background: url("../images/home.png");
+}
+
+h2 {
+  background: -webkit-linear-gradient(yellow, red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 30px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  font-family: "Quicksand", sans-serif;
+  text-align: center;
+  display: none;
+}
+
+button {
+  cursor: pointer;
 }

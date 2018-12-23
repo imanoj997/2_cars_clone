@@ -7,11 +7,13 @@ var blueCollide = false;
 var redCollide = false;
 var isCircleMissed;
 
+// checks collision between cars and obstacles
 function collisonDetection(bluecar, redcar, obstacle) {
   this.bluecar = bluecar;
   this.redcar = redcar;
   this.obstacle = obstacle;
 
+  //increase score in case of collison of car and circle obtacle
   if (this.obstacle.obstacleType === "circle") {
     if (obstacle.color === "red") {
       if (
@@ -37,6 +39,7 @@ function collisonDetection(bluecar, redcar, obstacle) {
         currentScore++;
       }
     }
+    //game over in case of collison of car and rect obtacle
   } else if (this.obstacle.obstacleType === "rect") {
     if (obstacle.color === "red") {
       if (
@@ -61,6 +64,7 @@ function collisonDetection(bluecar, redcar, obstacle) {
   }
 }
 
+//checks if any circle is missed by car, gameover if missed
 function circleMissed(bluecar, redcar, obstacle) {
   this.bluecar = bluecar;
   this.redcar = redcar;
@@ -78,18 +82,4 @@ function circleMissed(bluecar, redcar, obstacle) {
   ) {
     isCircleMissed = true;
   } else isCircleMissed = false;
-}
-
-function updateScore() {
-  if (isCollison === true && isCircle === true) {
-    currentScore++;
-  }
-  if (currentScore > highScore) {
-    highScore = currentScore;
-    localStorage.setItem("highScore".highScore);
-  }
-  c.fillRect(50, 100, 0, 0);
-  c.fillText(currentScore, 30, 50);
-  c.fillStyle = "white";
-  c.font = "bold 40pt Quicksand, sans-serif";
 }

@@ -12,7 +12,7 @@ body {
 canvas {
   margin: 0px auto;
   position: absolute;
-  left: 10%;
+  left: 30%;
   overflow: hidden;
 }
 
@@ -23,13 +23,13 @@ img {
 .welcomeDiv {
   position: absolute;
   margin: 0px auto;
-  left: 10%;
+  left: 30%;
   overflow: hidden;
   height: 624px;
 }
 
 .title {
-  padding: 100px 130px;
+  padding: 100px 115px;
 }
 
 #playBtn,
@@ -37,11 +37,11 @@ img {
   width: 90px;
   height: 90px;
   position: absolute;
-  left: 228px;
+  left: 225px;
   top: 250px;
 }
 
-.userManualBtn {
+#userManualBtn {
   width: 60px;
   height: 60px;
   left: 130px;
@@ -49,11 +49,35 @@ img {
   position: absolute;
 }
 
-.leaderboardBtn {
+.levelsBtn {
   width: 60px;
   height: 60px;
   left: 205px;
   top: 400px;
+  position: absolute;
+}
+
+#level1 {
+  width: 60px;
+  height: 60px;
+  left: 205px;
+  top: 400px;
+  position: absolute;
+}
+
+#level2 {
+  width: 60px;
+  height: 60px;
+  left: 205px;
+  top: 461px;
+  position: absolute;
+}
+
+#level3 {
+  width: 60px;
+  height: 60px;
+  left: 205px;
+  top: 522px;
   position: absolute;
 }
 
@@ -82,7 +106,7 @@ img {
 .gameoverDiv {
   position: absolute;
   margin: 0px auto;
-  left: 10%;
+  left: 30%;
   overflow: hidden;
   height: 624px;
 }
@@ -91,7 +115,7 @@ img {
   padding: 110px 85px;
 }
 
-.homeBtn {
+#homeBtn {
   width: 60px;
   height: 60px;
   left: 170px;
@@ -107,31 +131,6 @@ img {
   position: absolute;
 }
 
-/* .rePlayBtn {
-  width: 90px;
-  height: 90px;
-  position: absolute;
-  left: 228px;
-  top: 250px;
-} */
-
-/* .red {
-  left: 200px;
-  top: 340px;
-  color: red;
-  position: absolute;
+.firstInstruction {
+  margin-top: 50px;
 }
-
-.blue {
-  left: 200px;
-  top: 370px;
-  color: red;
-  position: absolute;
-}
-
-h2 {
-  left: 160px;
-  top: 400px;
-  color: red;
-  position: absolute;
-} */
