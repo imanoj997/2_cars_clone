@@ -1,3 +1,6 @@
+body {
+  background: url(../images/texture.jpg);
+}
 .title {
   background: -webkit-linear-gradient(yellow, red);
   -webkit-background-clip: text;

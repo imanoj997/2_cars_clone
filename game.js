@@ -105,7 +105,6 @@ function Game(levelSelector, velocity) {
       element.draw();
       collisonDetection(carB, carR, element);
       circleMissed(carB, carR, element);
-
       if (blueCollide === false && isCircleMissed === false) {
         element.update();
         if (element.y > canvas.height) {
