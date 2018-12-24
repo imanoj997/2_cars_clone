@@ -213,9 +213,9 @@ function loadGameOverScreen() {
   gameOverScreen.style.display = 'block';
   canvas.style.opacity = 0.8;
   c.font = 'bold 25pt Quicksand, sans-serif';
-  c.fillText('High Score -', 310, 50);
+  c.fillText('High Score -', 290, 50);
   c.font = 'bold 40pt Quicksand, sans-serif';
-  c.fillText(localStorage.getItem('highScore'), 500, 55);
+  c.fillText(localStorage.getItem('highScore'), 480, 55);
   console.log(highScore);
 
   c.fillStyle = 'white';
@@ -270,7 +270,6 @@ function updateScore() {
   c.fillText(currentScore, 30, 50);
   c.fillStyle = 'white';
   c.font = 'bold 40pt Quicksand, sans-serif';
-  console.log(currentScore, highScore);
   if (currentScore > highScore) {
     highScore = currentScore;
     localStorage.setItem('highScore', highScore);
