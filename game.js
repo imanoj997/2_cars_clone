@@ -30,7 +30,7 @@ var gameoverSound = new Audio();
 gameoverSound.src = './sounds/gameover.mp3';
 
 function Game(levelSelector, velocity) {
-  velocity = 250 + levelSelector * 100;
+  velocity = 300 + levelSelector * 100;
   if (levelSelector === 1) {
     carXChange = 1;
   } else carXChange = levelSelector - 0.5;
@@ -53,13 +53,13 @@ function Game(levelSelector, velocity) {
 
     if (redObstacleDelay % redRandomDelay === 0) {
       redObstacleDelay = 1;
-      redRandomDelay = getRandomInt(39, 79);
+      redRandomDelay = getRandomInt(29, 69);
       var redObstacle = new RedObstacles(velocity);
       redObstaclesList.add(redObstacle);
     }
     if (blueObstacleDelay % blueRandomDelay === 0) {
       blueObstacleDelay = 1;
-      blueRandomDelay = getRandomInt(41, 81);
+      blueRandomDelay = getRandomInt(38, 77);
       var blueObstacle = new BlueObstacles(velocity);
       blueObstaclesList.add(blueObstacle);
     }
@@ -128,10 +128,10 @@ function Game(levelSelector, velocity) {
 
 // Loads game intro screen and provides button listners to start game, see user manual, select level
 function loadWelcomeScreen() {
-  velocity = 250 + levelSelector * 100;
-  gameOverScreen.style.display = 'none';
   drawBackground();
   lines();
+  velocity = 300 + levelSelector * 100;
+  gameOverScreen.style.display = 'none';
   canvas.style.opacity = 0.8;
   newGame = new Game(levelSelector, velocity);
   var playBtn = document.getElementById('playBtn');

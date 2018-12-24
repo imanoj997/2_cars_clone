@@ -1,5 +1,6 @@
 body {
-  background: url(../images/texture.jpg);
+  /* background: url(../images/texture.jpg); */
+  background-color: black;
 }
 .title {
   background: -webkit-linear-gradient(yellow, red);
