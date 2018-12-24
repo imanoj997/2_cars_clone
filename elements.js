@@ -17,39 +17,39 @@ function Cars() {
   this.blueCarTop = blueCarTop;
   this.blueCar = new Image();
   this.redCar = new Image();
-  this.redCarLane = "left";
-  this.blueCarLane = "left";
+  this.redCarLane = 'left';
+  this.blueCarLane = 'left';
 
   this.drawRed = function() {
-    this.redCar.src = "./images/red-car.png";
+    this.redCar.src = './images/red-car.png';
     c.drawImage(this.redCar, this.redCarLeft, this.redCarTop);
   };
 
   this.drawBlue = function() {
-    this.blueCar.src = "./images/blue-car.png";
+    this.blueCar.src = './images/blue-car.png';
     c.drawImage(this.blueCar, this.blueCarLeft, this.blueCarTop);
   };
 
   this.changeRedCarLane = function(carXChange) {
-    if (carR.redCarLane === "left" && isRedCarMoving === false) {
+    if (carR.redCarLane === 'left' && isRedCarMoving === false) {
       var swipePosition = setInterval(function() {
         if (carR.redCarLeft <= redCarLane2) {
           isRedCarMoving = true;
           carR.redCarLeft += carXChange;
         } else {
           isRedCarMoving = false;
-          carR.redCarLane = "right";
+          carR.redCarLane = 'right';
           clearInterval(swipePosition);
         }
       }, 1);
-    } else if (carR.redCarLane === "right" && isRedCarMoving === false) {
+    } else if (carR.redCarLane === 'right' && isRedCarMoving === false) {
       var swipePosition = setInterval(function() {
         if (carR.redCarLeft >= redCarLane1) {
           isRedCarMoving = true;
           carR.redCarLeft -= carXChange;
         } else {
           isRedCarMoving = false;
-          carR.redCarLane = "left";
+          carR.redCarLane = 'left';
           clearInterval(swipePosition);
         }
       }, 1);
@@ -57,25 +57,25 @@ function Cars() {
   };
 
   this.changeBlueCarLane = function(carXChange) {
-    if (carB.blueCarLane === "left" && isBlueCarMoving === false) {
+    if (carB.blueCarLane === 'left' && isBlueCarMoving === false) {
       var swipePosition = setInterval(function() {
         if (carB.blueCarLeft <= blueCarLane2) {
           isBlueCarMoving = true;
           carB.blueCarLeft += carXChange;
         } else {
           isBlueCarMoving = false;
-          carB.blueCarLane = "right";
+          carB.blueCarLane = 'right';
           clearInterval(swipePosition);
         }
       }, 1);
-    } else if (carB.blueCarLane === "right" && isBlueCarMoving === false) {
+    } else if (carB.blueCarLane === 'right' && isBlueCarMoving === false) {
       var swipePosition = setInterval(function() {
         if (carB.blueCarLeft >= blueCarLane1) {
           isBlueCarMoving = true;
           carB.blueCarLeft -= carXChange;
         } else {
           isBlueCarMoving = false;
-          carB.blueCarLane = "left";
+          carB.blueCarLane = 'left';
           clearInterval(swipePosition);
         }
       }, 1);
@@ -90,7 +90,7 @@ function lines() {
   c.moveTo(267, 0);
   c.lineTo(267, 627);
   c.lineWidth = 12;
-  c.strokeStyle = "#8198f1";
+  c.strokeStyle = '#8198f1';
   c.stroke();
 
   //left line
@@ -109,6 +109,6 @@ function lines() {
 
 // draws blue background
 function drawBackground() {
-  var img = document.getElementsByTagName("img")[0];
+  var img = document.getElementsByTagName('img')[0];
   c.drawImage(img, 0, 0);
 }

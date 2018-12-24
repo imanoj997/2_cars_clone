@@ -14,8 +14,8 @@ function collisonDetection(bluecar, redcar, obstacle) {
   this.obstacle = obstacle;
 
   //increase score in case of collison of car and circle obtacle
-  if (this.obstacle.obstacleType === "circle") {
-    if (obstacle.color === "red") {
+  if (this.obstacle.obstacleType === 'circle') {
+    if (obstacle.color === 'red') {
       if (
         this.redcar.redCarLane === this.obstacle.lane &&
         this.obstacle.y + 40 >= this.redcar.redCarTop &&
@@ -27,7 +27,7 @@ function collisonDetection(bluecar, redcar, obstacle) {
         currentScore++;
       }
     }
-    if (obstacle.color === "blue") {
+    if (obstacle.color === 'blue') {
       if (
         this.bluecar.blueCarLane === this.obstacle.lane &&
         this.obstacle.y + 40 >= this.bluecar.blueCarTop &&
@@ -40,8 +40,8 @@ function collisonDetection(bluecar, redcar, obstacle) {
       }
     }
     //game over in case of collison of car and rect obtacle
-  } else if (this.obstacle.obstacleType === "rect") {
-    if (obstacle.color === "red") {
+  } else if (this.obstacle.obstacleType === 'rect') {
+    if (obstacle.color === 'red') {
       if (
         this.redcar.redCarLane === this.obstacle.lane &&
         this.obstacle.y + 40 >= this.redcar.redCarTop &&
@@ -51,7 +51,7 @@ function collisonDetection(bluecar, redcar, obstacle) {
         redCollide = true;
       } else redCollide = false;
     }
-    if (obstacle.color === "blue") {
+    if (obstacle.color === 'blue') {
       if (
         this.bluecar.blueCarLane === this.obstacle.lane &&
         this.obstacle.y + 40 >= this.bluecar.blueCarTop &&
@@ -70,14 +70,14 @@ function circleMissed(bluecar, redcar, obstacle) {
   this.redcar = redcar;
   this.obstacle = obstacle;
   if (
-    this.obstacle.obstacleType === "circle" &&
-    obstacle.color === "red" &&
+    this.obstacle.obstacleType === 'circle' &&
+    obstacle.color === 'red' &&
     this.obstacle.y > this.redcar.redCarTop + 75
   ) {
     isCircleMissed = true;
   } else if (
-    this.obstacle.obstacleType === "circle" &&
-    obstacle.color === "blue" &&
+    this.obstacle.obstacleType === 'circle' &&
+    obstacle.color === 'blue' &&
     this.obstacle.y > this.bluecar.blueCarTop + 75
   ) {
     isCircleMissed = true;

@@ -5,28 +5,28 @@
   font-size: 83px;
   letter-spacing: 6px;
   font-weight: 200;
-  font-family: "Quicksand", sans-serif;
+  font-family: 'Quicksand', sans-serif;
 }
 
 .title span {
-  font-family: "Quicksand", sans-serif;
+  font-family: 'Quicksand', sans-serif;
   font-weight: 900;
 }
 .gameOverTxt span {
-  font-family: "Quicksand", sans-serif;
+  font-family: 'Quicksand', sans-serif;
   font-weight: 900;
 }
 
 #playBtn {
-  background: url("../images/play.png");
+  background: url('../images/play.png');
 }
 
 #userManualBtn {
-  background: url("../images/user-manual.png");
+  background: url('../images/user-manual.png');
 }
 
 .levelsBtn {
-  background: url("../images/levels.png");
+  background: url('../images/levels.png');
 }
 
 .level {
@@ -46,11 +46,11 @@
 }
 
 .musicBtn {
-  background: url("../images/music.png");
+  background: url('../images/music.png');
 }
 
 .muteBtn {
-  background: url("../images/mute.png");
+  background: url('../images/mute.png');
 }
 
 .copyright {
@@ -60,7 +60,7 @@
   font-size: 23px;
   letter-spacing: 2px;
   font-weight: 400;
-  font-family: "Quicksand", sans-serif;
+  font-family: 'Quicksand', sans-serif;
 }
 
 .gameOverTxt {
@@ -70,19 +70,19 @@
   font-size: 63px;
   letter-spacing: 6px;
   font-weight: 200;
-  font-family: "Quicksand", sans-serif;
+  font-family: 'Quicksand', sans-serif;
 }
 
 #rePlayBtn {
-  background: url("../images/replay.png");
+  background: url('../images/replay.png');
 }
 
 .ratingsBtn {
-  background: url("../images/ratings.png");
+  background: url('../images/ratings.png');
 }
 
 #homeBtn {
-  background: url("../images/home.png");
+  background: url('../images/home.png');
 }
 
 h2 {
@@ -92,7 +92,7 @@ h2 {
   font-size: 30px;
   letter-spacing: 2px;
   font-weight: 700;
-  font-family: "Quicksand", sans-serif;
+  font-family: 'Quicksand', sans-serif;
   text-align: center;
   display: none;
 }

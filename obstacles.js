@@ -1,7 +1,7 @@
-var redObstacleCircleImg = document.getElementsByTagName("img")[1];
-var redObstacleRectImg = document.getElementsByTagName("img")[2];
-var blueObstacleCircleImg = document.getElementsByTagName("img")[3];
-var blueObstacleRectImg = document.getElementsByTagName("img")[4];
+var redObstacleCircleImg = document.getElementsByTagName('img')[1];
+var redObstacleRectImg = document.getElementsByTagName('img')[2];
+var blueObstacleCircleImg = document.getElementsByTagName('img')[3];
+var blueObstacleRectImg = document.getElementsByTagName('img')[4];
 
 var levelSelector = 1;
 var velocity;
@@ -11,7 +11,7 @@ var redObstacleXArray = [45.25, 181.75];
 var blueObstacleXArray = [324.25, 460.75];
 var circleY = 0;
 
-var obstacleTypeArray = ["circle", "rect"];
+var obstacleTypeArray = ['circle', 'rect'];
 var obstacleDelayArray = [45, 50, 65, 80, 85];
 
 var redObstacleDelay = 0;
@@ -24,15 +24,15 @@ function RedObstacles(velocity) {
   this.y = circleY;
   this.radius = 20;
   this.obstacleType = obstacleTypeArray[Math.floor(Math.random() * 2)];
-  this.color = "red";
+  this.color = 'red';
   if (this.x === 45.25) {
-    this.lane = "left";
+    this.lane = 'left';
   } else if (this.x == 181.75) {
-    this.lane = "right";
+    this.lane = 'right';
   }
 
   this.draw = function() {
-    if (this.obstacleType == "circle") {
+    if (this.obstacleType == 'circle') {
       c.drawImage(redObstacleCircleImg, this.x, this.y);
     } else {
       c.drawImage(redObstacleRectImg, this.x, this.y);
@@ -64,15 +64,15 @@ function BlueObstacles(velocity) {
   this.y = circleY;
   this.radius = 20;
   this.obstacleType = obstacleTypeArray[Math.floor(Math.random() * 2)];
-  this.color = "blue";
+  this.color = 'blue';
   if (this.x === 324.25) {
-    this.lane = "left";
+    this.lane = 'left';
   } else if (this.x == 460.75) {
-    this.lane = "right";
+    this.lane = 'right';
   }
 
   this.draw = function() {
-    if (this.obstacleType == "circle") {
+    if (this.obstacleType == 'circle') {
       c.drawImage(blueObstacleCircleImg, this.x, this.y);
     } else {
       c.drawImage(blueObstacleRectImg, this.x, this.y);
