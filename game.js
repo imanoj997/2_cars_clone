@@ -40,7 +40,7 @@ function Game(levelSelector, velocity) {
   var blueRandomDelay = getRandomInt(41, 81);
 
   this.start = function() {
-    requestAnimationFrame(init);
+    init();
     sound.play();
   };
 
