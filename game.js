@@ -24,11 +24,10 @@ var carB = new Cars();
 
 var newGame;
 
-function getRandomInt(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min)) + min;
-}
+var sound = new Audio();
+sound.src = './sounds/bg-music.mp3';
+var gameoverSound = new Audio();
+gameoverSound.src = './sounds/gameover.mp3';
 
 function Game(levelSelector, velocity) {
   velocity = 250 + levelSelector * 100;
@@ -42,6 +41,7 @@ function Game(levelSelector, velocity) {
 
   this.start = function() {
     requestAnimationFrame(init);
+    sound.play();
   };
 
   //contains main game logic, is refreshed every frame
@@ -212,12 +212,12 @@ function loadWelcomeScreen() {
 function loadGameOverScreen() {
   gameOverScreen.style.display = 'block';
   canvas.style.opacity = 0.8;
+  sound.pause();
+  gameoverSound.play();
   c.font = 'bold 25pt Quicksand, sans-serif';
   c.fillText('High Score -', 290, 50);
   c.font = 'bold 40pt Quicksand, sans-serif';
   c.fillText(localStorage.getItem('highScore'), 480, 55);
-  console.log(highScore);
-
   c.fillStyle = 'white';
 }
 
@@ -290,6 +290,13 @@ window.onkeydown = function(e) {
     alert('Please click play button or press space key');
   }
 };
+
+//reurns random value between 2 numbers
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
 
 // starting point of the game
 loadWelcomeScreen();
