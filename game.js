@@ -18,6 +18,7 @@ var blueObstaclesList = new BlueObstaclesList();
 var redKeyPressed = false;
 var blueKeyPressed = false;
 
+var highScore;
 var carR = new Cars();
 var carB = new Cars();
 
@@ -30,7 +31,7 @@ function getRandomInt(min, max) {
 }
 
 function Game(levelSelector, velocity) {
-  this.velocity = 250 + levelSelector * 100;
+  velocity = 250 + levelSelector * 100;
   if (levelSelector === 1) {
     carXChange = 1;
   } else carXChange = levelSelector - 0.5;
@@ -265,10 +266,10 @@ function startGame(game) {
 function updateScore() {
   if (isCollison === true && isCircle === true) {
     currentScore++;
-  }
-  if (currentScore > highScore) {
-    highScore = currentScore;
-    localStorage.setItem("highScore", highScore);
+    if (currentScore > highScore) {
+      highScore = currentScore;
+      localStorage.setItem("highScore", highScore);
+    }
   }
   c.fillText(currentScore, 30, 50);
   c.fillStyle = "white";

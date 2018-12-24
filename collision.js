@@ -1,5 +1,5 @@
 var currentScore = 0;
-var highScore;
+// var highScore;
 
 var isCollison = false;
 var isCircle = false;
